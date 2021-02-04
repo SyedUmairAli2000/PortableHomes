@@ -8,23 +8,26 @@
           <article>{{ Hotel.content }}</article>
       </div>
     </div>
+     <review-list :hotel-id="this.$route.params.id"></review-list>
     </div>
     <div class="col-md-4 pb-4">
-        <Availability></Availability>
+        <Availability :hotel-id="this.$route.params.id"></Availability>
     </div>
     </div>
 </template>
 
 <script>
 import Availability from "./Available";
+import ReviewList from "./Reviews";
 export default {
     components: {
-       Availability
+       Availability,
+       ReviewList
     },
     data(){
         return {
-            loading: false,
             Hotel:null,
+            loading: false,
         };
     },
     created(){

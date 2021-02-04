@@ -28,3 +28,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // Route::get('hotels', 'Api\HotelController@Show');
 
 Route::apiResource('hotels', 'Api\HotelController')->only(['index','show']);
+Route::get('hotels/{hotel}/availability','Api\HotelAvailabilityController')->name('hotels.availability.show');
+Route::get('hotels/{hotel}/reviews','Api\HotelReviewController')->name('hotels.reviews.index');
